@@ -1,148 +1,171 @@
+/* Estilos generales para todos los elementos */
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
 }
 
-body {
-    min-height: 100vh;
-    width: 100%;
-    font-size: 16px;
-    background: #eee;
-    color: #777;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Estilos básicos para la página */
+html {
+    font-family: "Times New Roman", Arial, sans-serif;
+    background-color: #E5E5E5;
 }
 
-.container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+/* Ajustes para áreas de texto */
+textarea {
+    font-size: 20px;
 }
 
-.item-container {
-    position: relative;
-    margin: 24px;
-    width: 320px;
-    height: 570px;
-    overflow: hidden;
-    background-color: #fff;
-    box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.15);
-    cursor: pointer;
+/* Estilos para dispositivos móviles */
+header img {
+    margin-top: 10px;
+    margin-left: 20px;
 }
 
-.img-container,
-.body-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+/* Estilos para botones */
+button {
+    background-color: #0A3871;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
 }
 
-.img-container img {
-    width: 100%;
+/* Efectos al pasar el mouse sobre los botones */
+button:hover {
+    background-color: #D8DFE8;
+    color: black;
 }
 
-.body-container {
-    position: relative;
+/* Estilo cuando el botón está enfocado */
+button:focus {
+    background-color: #071c3b;
+    color: white;
 }
 
-.overlay {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    background-color: rgba(24, 83, 122, 0.6);
-    opacity: 0;
-    transition: height linear 0.4s, opacity linear 0.2s;
+/* Estilos de diseño para contenedores principales */
+.mainContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    grid-auto-rows: minmax(200px, auto);
+    margin: 0 15px;
 }
 
-.item-container:hover .overlay {
-    opacity: 1;
-    height: 150px;
-}
-
-.event-info {
-    background-color: #fff;
+/* Caja para el área de encriptación */
+.encryptionBox {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Caja para el área de desencriptación */
+decryptionBox {
+    background-color: white;
+    display: flex;
     align-items: center;
-    padding: 8px;
+    justify-content: center;
+    min-height: 500px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 28px 5px #0A3871;
 }
 
-.title,
-.price {
-    color: #18537a;
-    font-size: 1.5em;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin: 12px;
+/* Estilos para el área de entrada de texto */
+.textInput {
+    flex: 2 400px;
+    border: 0;
+    background-color: #E5E5E5;
+    resize: none;
+    border-radius: 10px;
 }
 
-.info {
-    letter-spacing: 0.5px;
-    margin-bottom: 6px;
+/* Estilos para el área de salida de texto */
+.textOutput {
+    flex: 2 300px;
+    width: 90vw;
+    resize: none;
 }
 
-.separator {
-    width: 20%;
-    height: 6px;
-    background-color: #17537a;
-    margin-bottom: 16px;
+/* Estilos para los contenedores de botones */
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.additional-info {
-    border-top: 1px solid #bbb;
-    margin-top: 12px;
-    padding: 28px;
-    padding-bottom: 0;
+.buttonContainer button {
+    flex: 1 auto;
+    margin: 5px;
+    font-size: 18px;
+    line-height: 1.5;
+    width: 50px;
 }
 
-.additional-info .info {
-    font-size: 0.9em;
-    margin-bottom: 20px;
+/* Panel cuando no hay texto ingresado */
+.noTextPanel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
-.info i {
-    color: #18537a;
-    font-size: 1.1em;
-    margin-right: 4px;
+/* Panel cuando hay texto ingresado */
+.hasTextPanel {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.info span {
-    color: #18537a;
-    font-weight: bolder;
+/* Estilos para botones dentro del panel de texto */
+.hasTextPanel button {
+    flex: 1 auto;
+    font-size: 18px;
+    line-height: 1.5;
+    width: 250px;
+    margin-top: 20px;
 }
 
-.action {
-    color: #fff;
-    border: 3px solid #fff;
-    background-color: transparent;
-    position: absolute;
-    top: -100px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
-    outline: none;
-    cursor: pointer;
-    padding: 12px;
-    text-transform: uppercase;
-    font-size: 1.3em;
-    font-weight: bold;
-    letter-spacing: 2px;
-    transition: background-color 0.4s, top 0.4s;
+/* Estilos para el pie de página */
+footer {
+    background-color: #252525;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+    width: 98vw;
 }
 
-.item-container:hover .action {
-    top: 50px;
+footer a {
+    color: white;
 }
 
-.action:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+/* Consultas de medios para pantallas más grandes */
+@media screen and (min-width: 1024px) {
+    .mainContainer {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 30px;
+        grid-auto-rows: minmax(80vh, auto);
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    header {
+        padding: 30px 30px 30px 0;
+    }
+
+    .textOutput {
+        width: 30vw;
+        flex: 2 70vh;
+        resize: none;
+    }
+
+    footer {
+        width: 100%;
+        margin-top: 100px;
+    }
 }
