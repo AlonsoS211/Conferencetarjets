@@ -2,148 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-    <link rel="stylesheet" href="./style.css">
-    <title>Events Ticket Card</title>
+    <title>Text Encryptor</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="class.css">
 </head>
 <body>
-    <div class="container">
-        <div class="item-container">
-            <div class="img-container">
-                <img src="./images/julio-gamero1.jpg" alt="Event image">
-            </div>
 
-            <div class="body-container">
-                <div class="overlay"></div>
+<header class="header">
+    <img src="img/Vector.png" alt="logo alura latam">
+</header>
 
-                <div class="event-info">
-                    <p class="title">Dr. Julio Gamero</p>
-                    <div class="separator"></div>
-                    <p class="info">Arequipa, Peru</p>
-                    <p class="price">Free</p>
+<div class="mainContainer">
 
-                    <div class="additional-info">
-                        <p class="info">
-                            <i class="fas fa-map-marker-alt"></i>
-                            University the Salle
-                        </p>
-                        <p class="info">
-                            <i class="far fa-calendar-alt"></i>
-                            Sat, Apr 19, 10:00 AM EDT
-                        </p>
+    <!-- Caja para ingresar y encriptar el texto -->
+    <div class="encryptionBox">
+        <textarea class="textInput" placeholder="Ingrese el texto aquí"></textarea>
 
-                        <p class="info description">
-                            Economist and sociologist, researcher at the Peruvian Center for Social Studies (CEPES). Expert in rural development, peasant economy and public policies.
-                                            <span>more...</span>
-                        </p>
-                    </div>
-                </div>
-                <button class="action">Book it</button>
-            </div>
-        </div>
-
-        <div class="item-container">
-            <div class="img-container">
-                <img src="./images/Gonzalo Cusipuma Victor Antonio.jpg" alt="Event image">
-            </div>
-
-            <div class="body-container">
-                <div class="overlay"></div>
-
-                <div class="event-info">
-                    <p class="title">Gonzalo Cusipuma Victor Antonio</p>
-                    <div class="separator"></div>
-                    <p class="info">Arequipa, Peru</p>
-                    <p class="price">29$</p>
-
-                    <div class="additional-info">
-                        <p class="info">
-                            <i class="fas fa-map-marker-alt"></i>
-                            University the Salle
-                        </p>
-                        <p class="info">
-                            <i class="far fa-calendar-alt"></i>
-                            Sat, Apr 19, 11:00 AM EDT
-                        </p>
-
-                        <p class="info description">
-                            Agricultural engineer and researcher of the National Research Program on Andean Grains and Legumes, at the Andean Agricultural Experimental Station in Cusco of the National Institute for Agrarian Innovation INIA - PERU. 
-                             <span>more...</span>
-                        </p>
-                    </div>
-                </div>
-                <button class="action">Book it</button>
-            </div>
-        </div>
-
-        <div class="item-container">
-            <div class="img-container">
-                <img src="./images/dr. Mario Tapia Núñez.jpg" alt="Event image">
-            </div>
-
-            <div class="body-container">
-                <div class="overlay"></div>
-
-                <div class="event-info">
-                    <p class="title">Dr. Mario Tapia Núñez</p>
-                    <div class="separator"></div>
-                    <p class="info">Arequipa, Peru</p>
-                    <p class="price">70$</p>
-
-                    <div class="additional-info">
-                        <p class="info">
-                            <i class="fas fa-map-marker-alt"></i>
-                            University the Salle
-                        </p>
-                        <p class="info">
-                            <i class="far fa-calendar-alt"></i>
-                            Sat, Apr 19, 12:00 PM EDT
-                        </p>
-
-                        <p class="info description">
-                            An expert in Andean systems proposes using part of the coast to grow wheat and cereals in response to food crisis <span>more...</span>
-                        </p>
-                    </div>
-                </div>
-                <button class="action">Book it</button>
-            </div>
-        </div>
-
-        <div class="item-container">
-            <div class="img-container">
-                <img src="./images/Juan de Dios Pomares Bance.jpg" alt="Event image">
-            </div>
-
-            <div class="body-container">
-                <div class="overlay"></div>
-
-                <div class="event-info">
-                    <p class="title">Juan de Dios Pomares Bance</p>
-                    <div class="separator"></div>
-                    <p class="info">Arequipa, Peru</p>
-                    <p class="price">35$</p>
-
-                    <div class="additional-info">
-                        <p class="info">
-                            <i class="fas fa-map-marker-alt"></i>
-                            University the Salle
-                        </p>
-                        <p class="info">
-                            <i class="far fa-calendar-alt"></i>
-                            Sat, Apr 19, 13:00 PM EDT
-                        </p>
-
-                        <p class="info description">
-                            Specialist in cereals and Andean grains in the Ministry of Agriculture <span>more...</span>
-                        </p>
-                    </div>
-                </div>
-                <button class="action">Book it</button>
-            </div>
+        <!-- Botones para encriptar y desencriptar -->
+        <div class="buttonContainer">
+            <button id="encriptar">Encriptar</button>
+            <button id="desencriptar">Desencriptar</button>
         </div>
     </div>
-    
+
+    <!-- Caja para mostrar el resultado de la encriptación o desencriptación -->
+    <div class="decryptionBox">
+        <!-- Panel para mostrar cuando no hay texto ingresado -->
+        <div class="noTextPanel">
+            <img class="imagePlaceholder" src="img/Muñeco.png" alt="Placeholder Image">
+            <h3>No se encontró ningún mensaje</h3>
+            <br>
+            <p>Ingrese el texto que desea encriptar o desencriptar</p>
+        </div>
+
+        <!-- Panel para mostrar cuando hay texto procesado -->
+        <div class="hasTextPanel">
+            <textarea class="textOutput"></textarea>
+            <button id="copiar" class="copyButton">Copiar</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- Pie de página con enlace al código fuente -->
+<span>Alura Challenge | Oracle One | ©Yhonatan Peguero 2022.</span>
+      <a href="https://github.com/AlonsoS211" target="_blank">Github</a>
+      <a href="https://www.linkedin.com/in/alonsosotoc/" target="_blank">Linkedin</a>
+
 </body>
 </html>
